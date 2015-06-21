@@ -1,8 +1,8 @@
 var mu = require("masm-util");
 
 var argv = require("optimist")
-        .default("host", process.env["COUCHDB_PORT_5984_TCP_ADDR"] || "localhost")
-        .default("port", process.env["COUCHDB_PORT_5984_TCP_PORT"] || 5984)
+        .default("host", process.env["COUCHDB_PORT_5984_TCP_ADDR"] || process.env["COUCHDB_HOST"] || "localhost")
+        .default("port", process.env["COUCHDB_PORT_5984_TCP_PORT"] || process.env["COUCHDB_PORT"]  || 5984)
         .default("username", process.env["COUCHDB_USERNAME"])
         .default("password", process.env["COUCHDB_PASSWORD"])
         .default("proxy", null)
